@@ -6,8 +6,151 @@
   <link href="/dist/output.css" rel="stylesheet">
 </head>
 <body>
-  <h1 class="">
-    Hello world!
-  </h1>
+
+<!--    npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch   -->
+
+
+<!----------------------------------------------------BOX SHADOW------------------------------------------------------>
+<h1 class="text-center text-xl font-bold">box shadow</h1>
+
+<div class="flex items-center justify-around ">
+    <div class="container text-center shadow-md">shadow md</div>  
+    <div class="container text-center shadow-lg">shadow lg</div>
+    <div class="container text-center shadow-xl">shadow xl</div>
+    <div class="container text-center shadow-2xl">shadow 2xl</div>
+</div>
+
+<div class="flex items-center justify-around">
+    <div class="container text-center shadow-inner">shadow inner</div>
+    <div class="container text-center shadow-none">shadow none</div>
+    <div class="container text-center shadow-2xl hover:shadow-lg">shadow hover</div>
+    <div class="container text-center shadow-md md:shadow-2xl">shadow breakpoint md</div> <!-- ombre médium puis ombre 2xl-->
+    <div class="container text-center shadow-[30px_40px_10px_-15px_rgba(0,0,0,0.3)]">shadow perso</div> <!--[...px(ombre portée vers la droite),...px(ombre portée vers le bas),...px(flou de l'ombre),...px(grandeur de l'ombre), la couleur]-->
+</div>
+
+<!----------------------------------------------------BOX SHADOW COLOR------------------------------------------------->
+
+<hr>
+<h1 class="text-center text-xl font-bold">box shadow color</h1>
+
+<div class="flex items-center justify-around ">
+    <button class="bg-cyan-500 shadow-2xl shadow-cyan-500/100">bouton 1</button><!-- 500/100  le 100 correspond a l'opacité-->
+    <button class="bg-cyan-500 shadow-2xl shadow-cyan-500/50">bouton 2</button>
+    <button class="bg-blue-500 shadow-2xl shadow-blue-500/100">bouton 3</button>
+</div>
+
+
+<div class=" truc flex items-center justify-around ">
+  <!--<button class="bg-cyan-500 shadow-2xl shadow-inherit">inherit</button>-->
+  <button class="bg-cyan-500 shadow-2xl shadow-current">current</button>
+  <button class="bg-blue-500 shadow-2xl shadow-transparent">transparent</button>
+  <button class="bg-blue-500 shadow-2xl shadow-blue-500/100 hover:shadow-red-500/100">bouton hover</button>
+  <button class="bg-indigo-500 shadow-2xl shadow-indigo-500/100 lg:shadow-red-500/100">bouton breakpoint lg</button>
+  <button class="bg-blue-500 shadow-2xl shadow-[#50d71e]">couleur perso</button>
+</div>
+
+<!----------------------------------------------------OPACITY------------------------------------------------->
+
+<hr>
+<h1 class="text-center text-xl font-bold">opacity</h1>
+
+<div class=" truc flex items-center justify-around ">
+  <button class="bg-indigo-500 opacity-100">opacity 100</button>
+  <button class="bg-indigo-500 opacity-50">opacity 50</button>
+  <button class="bg-indigo-500 opacity-25">opacity 25</button>
+</div>
+
+
+<div class=" truc flex items-center justify-around ">
+  <button class="bg-indigo-500 opacity-50 hover:opacity-100">opacity hover</button>
+  <button class="bg-indigo-500 opacity-50 lg:opacity-100">opacity breakpoint</button>
+</div>
+
+<!----------------------------------------------------Mix Blend Mode------------------------------------------------->
+<!-- https://developer.mozilla.org/fr/docs/Web/CSS/blend-mode    (source info)-->
+
+<hr>
+<h1 class="text-center text-xl font-bold">Mix Blend Mode/ mélange de couleur</h1>
+
+
+<!--normal:   
+  
+     La couleur finale obtenue est la couleur du premier plan, quelle que soit la couleur de l'arrière-plan. On obtient ainsi un effet similaire à la superposition de deux feuilles de papier opaques.-->
+
+<div class="flex justify-center -space-x-14">
+  <div class="machin text-left mix-blend-normal bg-blue-400">bleu normal</div>
+  <div class="machin text-right mix-blend-normal bg-pink-400">rose noraml</div>
+</div>
+
+
+
+
+<!--screen:  
+      
+     La couleur finale est obtenue en : inversant les couleurs des deux plans, en les multipliant et en inversant la couleur obtenue. Si une des couches est noire, le résultat obtenu sera l'image de l'autre couche. Si une des couches est blanche, l'image obtenue sera blanche. L'effet obtenu est semblable à la projection de deux images sur un écran.-->
+
+<div class="flex mt-10 justify-center -space-x-14">
+  <div class="machin text-left mix-blend-screen bg-blue-400">bleu screen</div>
+  <div class="machin text-right mix-blend-screen bg-pink-400">rose screen</div>
+</div>
+
+
+<!--darken:  
+  
+    La couleur finale est la couleur la plus sombre des deux couches.-->
+
+<div class="flex mt-10 justify-center -space-x-14">
+  <div class="machin text-left mix-blend-darken bg-blue-400">bleu darken</div>
+  <div class="machin text-right mix-blend-darken bg-pink-400">rose darken</div>
+</div>
+
+
+<!--multiply
+
+    La couleur finale est obtenue en multipliant les couleurs du premier plan et de l'arrière-plan. Si une des couches est noire, le résultat obtenu sera une image noire. Si une des couches est blanche, cela ne modifiera pas l'autre image. On obtient ainsi un effet semblable à la superposition de deux transparents.-->
+
+<div class="flex  mt-10 justify-center -space-x-14">
+  <div class="machin text-left mix-blend-multiply bg-blue-400">bleu multiply</div>
+  <div class="machin text-right mix-blend-multiply bg-pink-400">rose multiply</div>
+</div>
+
+
+
+
+<div class="flex mt-10 justify-center -space-x-14">
+  <div class="machin text-left mix-blend-multiply bg-red-400">rouge</div>
+  <div class="machin text-right mix-blend-multiply bg-green-400">vert</div>
+</div>
+
+<div class="flex mt-10 justify-center -space-x-14">
+  <div class="machin text-left mix-blend-multiply  bg-yellow-400">jaune</div>
+  <div class="machin text-right mix-blend-multiply hover:mix-blend-screen bg-violet-400">mauve hover</div>
+</div>
+
+<div class="flex mt-10 justify-center -space-x-14">
+  <div class="machin text-left mix-blend-multiply bg-red-400">rouge</div>
+  <div class="machin text-right mix-blend-multiply lg:mix-blend-screen bg-green-400">vert breakpoint</div>
+</div>
+
+
+
+
+
+<!----------------------------------------------------Background Blend Mode------------------------------------------------->
+<!-- https://developer.mozilla.org/fr/docs/Web/CSS/blend-mode    (source info)-->
+
+<hr>
+<h1 class="text-center text-xl font-bold">Background Blend Mode</h1>
+
+<div class="flex mt-10 justify-center bg-blend-multiply">
+  <div class="machin text-left bg-blend-multiply bg-red-400">rouge</div>
+  <div class="machin text-right bg-blend-multiply bg-green-400">vert </div>
+  <div class="machin text-right bg-blend-darken bg-green-400">mauve </div>
+</div>
+
+
+
+<h1 class="text-center text-xl font-bold">the end</h1>
+
 </body>
 </html>
