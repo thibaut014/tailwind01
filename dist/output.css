@@ -693,8 +693,20 @@ video {
   background-blend-mode: multiply;
 }
 
+.bg-blend-screen {
+  background-blend-mode: screen;
+}
+
+.bg-blend-overlay {
+  background-blend-mode: overlay;
+}
+
 .bg-blend-darken {
   background-blend-mode: darken;
+}
+
+.bg-blend-lighten {
+  background-blend-mode: lighten;
 }
 
 .mix-blend-normal {
@@ -834,8 +846,20 @@ button{
   height: 150px;
 }
 
+.machin1{
+  background-image: url(/src/img/astro.jpg), url(/src/img/DALLEcopy.jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
+  width: 450px;
+  height: 250px;
+}
+
 .hover\:opacity-100:hover {
   opacity: 1;
+}
+
+.hover\:bg-blend-darken:hover {
+  background-blend-mode: darken;
 }
 
 .hover\:mix-blend-screen:hover {
@@ -864,6 +888,10 @@ button{
 @media (min-width: 1024px) {
   .lg\:opacity-100 {
     opacity: 1;
+  }
+
+  .lg\:bg-blend-darken {
+    background-blend-mode: darken;
   }
 
   .lg\:mix-blend-screen {

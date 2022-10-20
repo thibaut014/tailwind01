@@ -34,3 +34,11 @@ button{
     width: 250px;
     height: 150px;
 }
+
+.machin1{
+    background-image: url(/src/img/astro.jpg), url(/src/img/DALLEcopy.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    width: 450px;
+    height: 250px;
+}
